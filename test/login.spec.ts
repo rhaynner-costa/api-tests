@@ -24,6 +24,6 @@ describe('Testes de Login - ServeRest', () => {
         const corpo = response.body as LoginResponse;
         expect(corpo.authorization).to.contain('Bearer');
         
-        console.log('Sucesso! Token gerado:', corpo.authorization);
+        //console.log('Sucesso! Token gerado:', corpo.authorization);
     });
 });
