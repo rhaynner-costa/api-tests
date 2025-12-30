@@ -1,11 +1,11 @@
 import request from 'supertest';
 import { LoginPayload } from '../types/ServerestTypes';
-
-const API_URL = 'https://serverest.dev';
+import { CONFIG } from '../utils/Config';
 
 export class LoginService {
     async realizarLogin(credenciais: LoginPayload) {
-        return request(API_URL)
+        // Use CONFIG.API_URL em vez da string fixa
+        return request(CONFIG.API_URL) 
             .post('/login')
             .send(credenciais)
             .set('Accept', 'application/json');
